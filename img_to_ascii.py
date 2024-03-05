@@ -2,7 +2,6 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np_1
 import numpy as np
 import argparse
-import time
 
 f_size = 12
 block_w = 8
@@ -232,11 +231,8 @@ if __name__ == "__main__":
         
 
     else:
-        
         imgArr = getImgAsArray(inputFilename)
-        start_time = time.time()
         outArr = getClosestAsciiArr(imgArr ,matMap)
-        elapsed_time = time.time() - start_time
 #        if args['gpu']:
 #            outArr = np.asnumpy(outArr)
         saveImg(outArr, outputFilename)
