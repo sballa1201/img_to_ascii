@@ -31,4 +31,4 @@ In the examples below, the right image is the original, the middle is converted 
 # How it works
 We make the image graycale and then split it into rectangular tiles that are the same size as the font we are using (16 x 8). For each tile, we then compute the "closest" ascii character to it. This is done by first converting the tile and each ascii character, which is a 16x8 matrix, into a 16x8=128 length vector (concatenate the rows). We then find the closest ascii charcacter geometrically (any norm in this 128 dimensional space works, we use L1 for simplicity).
 
-A simpler way to do this is to assign a "grayscale" value to each ascii character and use this to find the corresponding ascii character for each tile. However the method above allows to edges to be more accurately represented, at the cost of more computation.
+A simpler way to do this is to assign a "grayscale" value to each ascii character and use this to find the corresponding ascii character for each tile. However the method above allows edges in the image to be more accurately represented, at the cost of more computation.
